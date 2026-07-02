@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SGS — Железарија · Водовод · Електрика · Градина</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --steel:#595959;
+  --steel-dark:#404040;
+  --gold:#FFC000;
+  --gold-deep:#E0A800;
+  --ink:#2E2E2E;
+  --concrete:#EFEFED;
+  --paper:#FFFFFF;
+  --line:#DBDBD7;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--concrete);line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+/* ---------- top bar ---------- */
+.topbar{background:var(--steel-dark);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:10px 24px;flex-wrap:wrap;gap:10px}
+.topbar .phone{font-family:'Roboto Mono',monospace;font-size:13px;color:#ddd;text-decoration:none}
+.topbar .phone:hover{color:var(--gold)}
+.lang{display:flex;gap:6px}
+.lang button{background:transparent;border:1px solid #777;color:#ccc;font-family:'Roboto Mono',monospace;font-size:12px;padding:4px 10px;cursor:pointer;letter-spacing:1px}
+.lang button:hover{border-color:var(--gold);color:var(--gold)}
+.lang button.active{background:var(--gold);border-color:var(--gold);color:var(--steel-dark);font-weight:700}
+
+/* ---------- header ---------- */
+header{background:var(--steel);padding:26px 24px;display:flex;align-items:center;gap:16px}
+.logo{display:flex;align-items:baseline;gap:12px}
+.logo .mark{background:var(--gold);color:var(--steel-dark);font-family:'Oswald',sans-serif;font-weight:700;font-size:30px;letter-spacing:2px;padding:4px 14px;line-height:1.2}
+.logo .tag{color:#D8D8D8;font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+
+/* ---------- hero ---------- */
+.hero{max-width:1020px;margin:0 auto;padding:64px 24px 40px}
+.hero h1{font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;font-size:clamp(34px,6vw,62px);line-height:1.08;letter-spacing:.5px;color:var(--steel-dark);max-width:16ch}
+.hero h1 .gold{background:var(--gold);padding:0 10px}
+.hero p{margin-top:18px;font-size:17px;max-width:52ch;color:#4A4A4A}
+
+/* ---------- catalog rows (signature) ---------- */
+.rows{max-width:1020px;margin:26px auto 0;padding:0 24px 20px}
+.row-head{display:grid;grid-template-columns:86px 1fr 120px;background:var(--steel);color:var(--gold);font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.row-head span{padding:9px 14px}
+.row-head span:nth-child(3){text-align:right}
+.cat{display:grid;grid-template-columns:86px 1fr 120px;background:var(--paper);border:1px solid var(--line);border-top:none;text-decoration:none;transition:background .15s ease}
+.cat:hover{background:#FFF8E1}
+.cat .num{background:var(--gold);color:var(--steel-dark);font-family:'Oswald',sans-serif;font-weight:700;font-size:26px;display:flex;align-items:center;justify-content:center;padding:22px 0}
+.cat .body{padding:18px 20px}
+.cat .body h2{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:21px;letter-spacing:1px;color:var(--steel-dark)}
+.cat .body p{font-size:14px;color:#5C5C5C;margin-top:3px}
+.cat .dots{display:flex;align-items:center;justify-content:flex-end;padding-right:22px;font-size:15px;letter-spacing:4px;color:var(--steel);font-family:'Roboto Mono',monospace}
+
+/* ---------- catalog download band ---------- */
+.band{background:var(--gold);margin-top:56px}
+.band-inner{max-width:1020px;margin:0 auto;padding:46px 24px;display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap}
+.band h2{font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;font-size:clamp(24px,4vw,36px);color:var(--steel-dark);letter-spacing:1px}
+.band .meta{font-family:'Roboto Mono',monospace;font-size:13px;color:#6B5200;margin-top:6px}
+.btn{display:inline-block;background:var(--steel-dark);color:#fff;font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:2px;font-size:16px;padding:16px 34px;text-decoration:none;transition:background .15s ease}
+.btn:hover{background:#2B2B2B}
+
+/* ---------- about ---------- */
+.about{max-width:1020px;margin:0 auto;padding:64px 24px}
+.eyebrow{font-family:'Roboto Mono',monospace;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--steel);border-left:4px solid var(--gold);padding-left:10px;margin-bottom:14px}
+.about h2{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:28px;color:var(--steel-dark);letter-spacing:1px;margin-bottom:12px}
+.about p{max-width:62ch;color:#4A4A4A}
+
+/* ---------- contact ---------- */
+.contact{background:var(--paper);border-top:1px solid var(--line)}
+.contact-inner{max-width:1020px;margin:0 auto;padding:56px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:34px}
+.contact h3{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;font-size:17px;letter-spacing:1.5px;color:var(--steel-dark);margin-bottom:8px}
+.contact p{font-size:15px;color:#4A4A4A;white-space:pre-line}
+.contact .mono{font-family:'Roboto Mono',monospace}
+
+/* ---------- footer ---------- */
+footer{background:var(--steel-dark);color:#BBB;text-align:center;padding:22px 24px;font-size:13px}
+footer .gold{color:var(--gold)}
+
+@media (max-width:560px){
+  .row-head{grid-template-columns:64px 1fr 84px}
+  .cat{grid-template-columns:64px 1fr 84px}
+  .cat .num{font-size:20px}
+  .cat .dots{padding-right:14px;letter-spacing:2px}
+  .band-inner{justify-content:center;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="lang" role="group" aria-label="Language">
+    <button class="active" data-lang="mk" onclick="setLang('mk')">МК</button>
+    <button data-lang="sq" onclick="setLang('sq')">SQ</button>
+    <button data-lang="en" onclick="setLang('en')">EN</button>
+  </div>
+  <a class="phone" href="tel:+389XXXXXXXX">+389 XX XXX XXX</a>
+</div>
+
+<header>
+  <div class="logo">
+    <span class="mark">SGS</span>
+    <span class="tag" data-i18n="tagline">Железарија · Водовод · Електрика · Градина</span>
+  </div>
+</header>
+
+<section class="hero">
+  <h1><span data-i18n="hero1">Сè за домот, дворот</span><br><span class="gold" data-i18n="hero2">и за мајсторот.</span></h1>
+  <p data-i18n="heroP">Повеќе од 580 артикли на едно место — алат, водоводен материјал, електрика и градинарска опрема, по цени за секој џеб.</p>
+</section>
+
+<section class="rows" aria-label="Categories">
+  <div class="row-head">
+    <span data-i18n="colNum">БР.</span><span data-i18n="colCat">КАТЕГОРИЈА</span><span data-i18n="colMark">ОЗНАКА</span>
+  </div>
+  <a class="cat" href="Katalog%20Full%20Mix.pdf">
+    <span class="num">01</span>
+    <span class="body"><h2 data-i18n="c1">Железарија</h2><p data-i18n="c1p">Рачен алат, брави, ленти, лепаци, заштитна опрема</p></span>
+    <span class="dots">●</span>
+  </a>
+  <a class="cat" href="Katalog%20Full%20Mix.pdf">
+    <span class="num">02</span>
+    <span class="body"><h2 data-i18n="c2">Водовод</h2><p data-i18n="c2p">Пумпи, славини, тушеви, црева, спојки и вентили</p></span>
+    <span class="dots">●●</span>
+  </a>
+  <a class="cat" href="Katalog%20Full%20Mix.pdf">
+    <span class="num">03</span>
+    <span class="body"><h2 data-i18n="c3">Електрика</h2><p data-i18n="c3p">Кабли, продолжни, сијалици, приклучоци и осигурувачи</p></span>
+    <span class="dots">●●●</span>
+  </a>
+  <a class="cat" href="Katalog%20Full%20Mix.pdf">
+    <span class="num">04</span>
+    <span class="body"><h2 data-i18n="c4">Градина</h2><p data-i18n="c4p">Прскалки, црева за наводнување, тримери и опрема за двор</p></span>
+    <span class="dots">●●●●</span>
+  </a>
+</section>
+
+<section class="band" id="katalog">
+  <div class="band-inner">
+    <div>
+      <h2 data-i18n="dlTitle">Преземете го целиот каталог</h2>
+      <p class="meta" data-i18n="dlMeta">581 артикли · 59 страници · PDF ~20MB</p>
+    </div>
+    <a class="btn" href="Katalog%20Full%20Mix.pdf" download data-i18n="dlBtn">Преземи PDF</a>
+  </div>
+</section>
+
+<section class="about">
+  <div class="eyebrow" data-i18n="aboutEyebrow">За нас</div>
+  <h2 data-i18n="aboutTitle">Локална продавница, целосен асортиман</h2>
+  <p data-i18n="aboutP">SGS е продавница за железарија, водовод, електрика и градинарска опрема. Кај нас ќе најдете сè што ви треба за поправки, градба и одржување — од најмалата спојка до пумпи и алат за професионалци. Дојдете во продавницата или разгледајте го каталогот однапред.</p>
+</section>
+
+<section class="contact">
+  <div class="contact-inner">
+    <div>
+      <h3 data-i18n="visitTitle">Посетете нè</h3>
+      <p data-i18n="visitP">[Адреса на продавницата]
+[Град], Северна Македонија</p>
+    </div>
+    <div>
+      <h3 data-i18n="callTitle">Јавете се</h3>
+      <p class="mono">+389 XX XXX XXX</p>
+    </div>
+    <div>
+      <h3 data-i18n="hoursTitle">Работно време</h3>
+      <p data-i18n="hoursP">Пон – Саб: 08:00 – 20:00
+Недела: затворено</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="gold">SGS</span> © 2026 · <span data-i18n="footer">Железарија · Водовод · Електрика · Градина</span>
+</footer>
+
+<script>
+const T = {
+  mk: {
+    tagline:"Железарија · Водовод · Електрика · Градина",
+    hero1:"Сè за домот, дворот", hero2:"и за мајсторот.",
+    heroP:"Повеќе од 580 артикли на едно место — алат, водоводен материјал, електрика и градинарска опрема, по цени за секој џеб.",
+    colNum:"БР.", colCat:"КАТЕГОРИЈА", colMark:"ОЗНАКА",
+    c1:"Железарија", c1p:"Рачен алат, брави, ленти, лепаци, заштитна опрема",
+    c2:"Водовод", c2p:"Пумпи, славини, тушеви, црева, спојки и вентили",
+    c3:"Електрика", c3p:"Кабли, продолжни, сијалици, приклучоци и осигурувачи",
+    c4:"Градина", c4p:"Прскалки, црева за наводнување, тримери и опрема за двор",
+    dlTitle:"Преземете го целиот каталог", dlMeta:"581 артикли · 59 страници · PDF ~20MB", dlBtn:"Преземи PDF",
+    aboutEyebrow:"За нас", aboutTitle:"Локална продавница, целосен асортиман",
+    aboutP:"SGS е продавница за железарија, водовод, електрика и градинарска опрема. Кај нас ќе најдете сè што ви треба за поправки, градба и одржување — од најмалата спојка до пумпи и алат за професионалци. Дојдете во продавницата или разгледајте го каталогот однапред.",
+    visitTitle:"Посетете нè", visitP:"[Адреса на продавницата]\n[Град], Северна Македонија",
+    callTitle:"Јавете се", hoursTitle:"Работно време", hoursP:"Пон – Саб: 08:00 – 20:00\nНедела: затворено",
+    footer:"Железарија · Водовод · Електрика · Градина"
+  },
+  sq: {
+    tagline:"Hekurishte · Hidraulikë · Elektrikë · Kopshtari",
+    hero1:"Gjithçka për shtëpinë, oborrin", hero2:"dhe për mjeshtrin.",
+    heroP:"Më shumë se 580 artikuj në një vend — vegla, materiale hidraulike, elektrikë dhe pajisje kopshtarie, me çmime për çdo xhep.",
+    colNum:"NR.", colCat:"KATEGORIA", colMark:"SHENJA",
+    c1:"Hekurishte", c1p:"Vegla dore, brava, shirita, ngjitës, pajisje mbrojtëse",
+    c2:"Hidraulikë", c2p:"Pompa, rubineta, dushe, zorrë, bashkues dhe ventila",
+    c3:"Elektrikë", c3p:"Kabllo, zgjatues, llamba, priza dhe siguresa",
+    c4:"Kopshtari", c4p:"Spërkatëse, zorrë ujitjeje, trimera dhe pajisje oborri",
+    dlTitle:"Shkarkoni katalogun e plotë", dlMeta:"581 artikuj · 59 faqe · PDF ~20MB", dlBtn:"Shkarko PDF",
+    aboutEyebrow:"Rreth nesh", aboutTitle:"Dyqan vendor, asortiment i plotë",
+    aboutP:"SGS është dyqan për hekurishte, hidraulikë, elektrikë dhe pajisje kopshtarie. Tek ne do të gjeni gjithçka që ju nevojitet për riparime, ndërtim dhe mirëmbajtje — nga bashkuesi më i vogël deri te pompat dhe veglat profesionale. Ejani në dyqan ose shfletoni katalogun paraprakisht.",
+    visitTitle:"Na vizitoni", visitP:"[Adresa e dyqanit]\n[Qyteti], Maqedonia e Veriut",
+    callTitle:"Na telefononi", hoursTitle:"Orari i punës", hoursP:"Hën – Sht: 08:00 – 20:00\nE diel: mbyllur",
+    footer:"Hekurishte · Hidraulikë · Elektrikë · Kopshtari"
+  },
+  en: {
+    tagline:"Hardware · Plumbing · Electrical · Garden",
+    hero1:"Everything for the home, the yard", hero2:"and the tradesman.",
+    heroP:"More than 580 products in one place — tools, plumbing supplies, electrical goods and garden equipment, at prices for every budget.",
+    colNum:"NO.", colCat:"CATEGORY", colMark:"MARK",
+    c1:"Hardware", c1p:"Hand tools, locks, tapes, adhesives, protective gear",
+    c2:"Plumbing", c2p:"Pumps, taps, showers, hoses, couplings and valves",
+    c3:"Electrical", c3p:"Cables, extension cords, bulbs, plugs and fuses",
+    c4:"Garden", c4p:"Sprinklers, irrigation hoses, trimmers and yard equipment",
+    dlTitle:"Download the full catalog", dlMeta:"581 products · 59 pages · PDF ~20MB", dlBtn:"Download PDF",
+    aboutEyebrow:"About us", aboutTitle:"A local shop with a complete range",
+    aboutP:"SGS is a shop for hardware, plumbing, electrical and garden supplies. Here you'll find everything you need for repairs, building and maintenance — from the smallest coupling to pumps and professional tools. Visit the shop, or browse the catalog in advance.",
+    visitTitle:"Visit us", visitP:"[Shop address]\n[City], North Macedonia",
+    callTitle:"Call us", hoursTitle:"Opening hours", hoursP:"Mon – Sat: 08:00 – 20:00\nSunday: closed",
+    footer:"Hardware · Plumbing · Electrical · Garden"
+  }
+};
+function setLang(lang){
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k = el.getAttribute('data-i18n');
+    if(T[lang][k] !== undefined) el.textContent = T[lang][k];
+  });
+  document.querySelectorAll('.lang button').forEach(b=>{
+    b.classList.toggle('active', b.getAttribute('data-lang')===lang);
+  });
+}
+</script>
+</body>
+</html>
